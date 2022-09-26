@@ -3,6 +3,8 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using MvcToyStore.Data;
+
 
 #nullable disable
 
@@ -16,7 +18,7 @@ namespace MvcToyStore.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
 
-            modelBuilder.Entity("MvcMovie.Models.Toy", b =>
+            modelBuilder.Entity("MvcToy.Models.Toy", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

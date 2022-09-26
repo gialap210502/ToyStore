@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using MvcToyStore.Models;
 
-    public class MvcToyContext : DbContext
+namespace MvcToyStore.Data
+{
+public class MvcToyContext : DbContext
     {
         public MvcToyContext (DbContextOptions<MvcToyContext> options)
             : base(options)
         {
         }
 
-        public DbSet<MvcMovie.Models.Toy> Toy { get; set; } = default!;
+        public DbSet<MvcToyStore.Models.Toy> Toy { get; set; } = default!;
     }
+}
+    
