@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using MvcToyStore.Data;
 using MvcToyStore.Models;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MvcProductContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcProductContext") ?? throw new InvalidOperationException("Connection string 'MvcProductContext' not found.")));
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<MvcToyContext>(options =>

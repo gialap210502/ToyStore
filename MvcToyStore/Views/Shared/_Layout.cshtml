@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,27 +9,90 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MvcToyStore.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ToyStore</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <nav class="navbar navbar-expand-xl navbar-light">
+                        <div class="container-fluid">
+                            <a href="/HelloWorld" class="navbar-brand">Toy Store</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav mx-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/Toys" style="color: Black;">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/HelloWorld/Welcome" style="color: Black;">about</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" style="color: Black;">Wine</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: Black;">
+                                            Liquor
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#" style="color: Black;">Cider</a></li>
+                                            <li><a class="dropdown-item" href="#" style="color: Black;">Mead</a></li>
+                                            <li><a class="dropdown-item" href="#" style="color: Black;">Others</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="col-lg-4 col-md-3">
+                    <div class="header-search mt-2">
+                        <div class="search-form">
+                            <form method="get">
+                                <div class="input-group">
+                                    <div class="select-style">
+                                        <select name="order">
+                                            <option class="topshow" value="1">All</option>
+                                            <option value="a">Beer</option>
+                                            <option value="b">Wine</option>
+                                            <option value="c">Liquor</option>
+                                            <option value="d">Cider</option>
+                                            <option value="e">Mead</option>
+                                            <option value="f">Others</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" name="search" id="search" class="form-control"
+                                        placeholder="Search Here" />
+                                    <div class="input-group-addon">
+                                        <button type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 cart-login">
+                    <div class="float-end cart mt-2">
+                        <a href="#">
+                            <span class="number">10</span>
+                            <img class="img-fluid" src="/images/cart.png" alt="cart" />
+                            <span>Cart</span>
+                        </a>
+                    </div>
+
+                    <div class="float-end">
+                        <button type="button" class="btn btn-light mt-2 btn-sm">Login</button>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -46,4 +110,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
